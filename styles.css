@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border: none;
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        "head head head"
+        "content content content"
+        "foot foot foot";
+    grid-template-rows: 30px auto 30px;
+    height: 100vh;
+    justify-content: center;
+    align-content: space-between;
+    text-align: center;
+    background: radial-gradient(ellipse at center, #0a2e38 0%, black 70%);
+    color: #c9c9c9;
+}
+
+header {
+    grid-area: head;
+}
+
+article {
+    grid-area: content;
+    justify-items: stretch;
+}
+
+/* FORM STYLES */
+
+#form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+#input-file + label {
+    color: #c1cff3;
+    border: 2px solid currentColor;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+#input-file + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+
+#input-file + label:hover {
+    color: #545f7d;
+}
+
+/* GENERATED FILES STYLE */
+#file-generated {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    gap: 10px;
+}
+
+#file-generated a {
+    width: 100%;
+}
+
+/* MODAL STYLES */
+/* modal prefixed with jm- to prevent name clashes with any css libraries ex. bootstrap */
+.jm-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    overflow: auto;
+}
+
+.jm-modal.open {
+    display: block;
+}
+
+.jm-modal-body {
+    padding: 20px;
+    background: #fff;
+    width: auto;
+    height: 90vh;
+    border-radius: 10px;
+}
+
+/* BUTTON STYLES */
+
+#btnSend {
+    background-color: #daf6ff;
+    border: none;
+    color: #343434;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#btnSend:hover {
+    background-color: #91cee2;
+    color: #343434;
+}
+
+#btnSend:active {
+    opacity: 0.5;
+}
+
+#btnClose {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid #fff;
+    background: #515151;
+    float: right;
+    top: -15px;
+    right: -15px;
+    transition: 0.2s ease-in-out;
+
+    .line {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 15px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+        transform-origin: center;
+        transform: translate(-50%, -50%) rotate(45deg);
+
+        &:nth-child(2) {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    &:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+}
+
+.jm-pdf-view {
+    width: auto;
+    height: 98%;
+}
+
+.body.jm-modal-open {
+    overflow: hidden;
+}
+
+/* FOOTER STYLES */
+
+footer {
+    grid-area: foot;
+}
+
+footer p {
+    font-size: 0.6em;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fafafa;
+    font-weight: bold;
+}

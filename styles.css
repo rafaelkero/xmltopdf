@@ -20,8 +20,6 @@ body {
     background: radial-gradient(ellipse at center, #0a2e38 0%, black 70%);
     color: #c9c9c9;
 }
-main {
-}
 
 header {
     grid-area: head;

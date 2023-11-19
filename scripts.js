@@ -29,8 +29,8 @@ form.addEventListener("submit", (e) => {
     if (fileNameSpan.innerHTML === "Selecione o arquivo xml") {
         window.alert("Selecione um arquivo XML!")
     } else {
-        sendFile()
         openModal("modal")
+        sendFile()
     }
 })
 

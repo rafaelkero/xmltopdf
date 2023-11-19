@@ -19,6 +19,7 @@ function sendFile() {
         })
         .catch((err) => {
             console.log(err)
+            window.alert(`Erro: ${err}`)
         })
 }
 

@@ -8,10 +8,10 @@
         <script src="scripts.js" defer></script>
     </head>
     <body>
+        <header>
+            <h1>Conversor XML para PDF</h1>
+        </header>
         <main>
-            <header>
-                <h1>Conversor XML para PDF</h1>
-            </header>
             <article>
                 <div class="container">
                     <div id="file-generated"></div>
@@ -40,13 +40,15 @@
                         <div class="line"></div>
                     </button>
                     <div class="jm-modal-body">
-                        <div class="jm-pdf-view"></div>
+                        <div class="jm-pdf-view">
+                            <embed id="modal-content" src="" type="application/pdf" width="100%" height="100%" />
+                        </div>
                     </div>
                 </div>
             </article>
-            <footer>
-                <p>Desenvolvido por <a href="https://github.com/rafaelkero" target="_blank">Rafael Quero</a></p>
-            </footer>
         </main>
+        <footer>
+            <p>Desenvolvido por <a href="https://github.com/rafaelkero" target="_blank">Rafael Quero</a></p>
+        </footer>
     </body>
 </html>

@@ -4,7 +4,7 @@ const file = document.querySelector("#input-file")
 const fileNameSpan = document.getElementById("file-name-span")
 const svg = document.querySelector("svg")
 const payload = new FormData(form)
-const modalBody = document.querySelector(".jm-pdf-view")
+const modalBody = document.getElementById("modal-content")
 
 // Send file to api
 function sendFile() {
@@ -14,9 +14,8 @@ function sendFile() {
     })
         .then((res) => res.json())
         .then((data) => {
-            // Create the file link
-            // createElement(data)
-            modalBody.innerHTML = `<embed src="${data.pdf}" type="application/pdf" width="100%" height="100%">`
+            // change element attribute with pdf link
+            modalBody.src = data.pdf
         })
         .catch((err) => {
             console.log(err)
@@ -30,7 +29,10 @@ form.addEventListener("submit", (e) => {
         window.alert("Selecione um arquivo XML!")
     } else {
         sendFile()
-        openModal("modal")
+        // 1000ms delay to open Modal
+        setTimeout(() => {
+            openModal("modal")
+        }, 1000)
     }
 })
 
